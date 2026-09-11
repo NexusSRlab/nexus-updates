@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.0.0",
-  "download_url": "https://github.com/ikerugr/nexus-updates/releases/tag/v1.0.0",
-  "release_url": "https://github.com/ikerugr/nexus-updates/releases/tag/v1.0.0",
-  "release_notes": "<ul><li>Primera versión estable para estudiantes.</li></ul>",
-  "download_mac": "https://github.com/ikerugr/nexus-updates/releases/download/v1.0.0/NexusSR-v1.0.0-mac.zip",
-  "download_win": "https://github.com/ikerugr/nexus-updates/releases/download/v1.0.0/NexusSR-v1.0.0-win.zip",
-  "sha256_mac": "dbd0a8bc26bf30c901fe9c16056e464a0748f0c25281c434f7ece0b59582e452",
-  "sha256_win": "e06989620d99e2db5f28093b8bec87c0c3f77ce90396acddca6348505a506efc"
+  "latest_version": "1.1.0",
+  "download_url": "https://dl.nexussr.org/",
+  "release_url": "https://dl.nexussr.org/notas",
+  "release_notes": "<ul><li>Downloads and update checks now come from nexussr.org instead of a third-party page.</li><li>Meta-analysis: corrected effect-size arithmetic, studies are no longer dropped in silence, and the engine now has a test suite.</li><li>Citations: references keep volume and page numbers, and Claim-to-Citation matches claims far more accurately.</li><li>Reader: reading queues, annotations and highlights that survive closing the PDF.</li><li>Agreement: a real 95% confidence interval for Cohen&#x27;s kappa, and studies nobody compared are no longer scored.</li><li>Risk of Bias: corrected ROBINS-I and JBI items, and the AI pre-fill can no longer invent an answer the tool does not offer.</li><li>Search String Creator and Polyglot: the query searches what you asked for, and nothing is dropped without telling you.</li><li>Reference set check: measure how much of a known set your search actually recovered, and why a paper is missing.</li><li>Library: duplicate pairing by title works again on .nbib, .csv and .xml imports.</li><li>AI: cheaper calls, a spending ceiling, and the same results parser for every route.</li></ul>",
+  "download_mac": "https://dl.nexussr.org/mac",
+  "download_win": "https://dl.nexussr.org/win",
+  "sha256_mac": "2127c042a226724e850148c313a9fabd4c9eb15401226828a5669fc3cead0fff",
+  "sha256_win": "b92e110c6c9e779218c33c5910ab8103d055277eb3cd34b59e0aae35fcfefbe0"
 }
