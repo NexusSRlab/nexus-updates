@@ -1,0 +1,119 @@
+# Compila el instalador de Windows (.exe) y lo adjunta a la release.
+#
+# POR QUÉ VIVE AQUÍ: el compilador de Inno Setup solo corre en Windows, e Iker
+# desarrolla en un Mac. Esta máquina de GitHub es un Windows de verdad, así que
+# además de compilar puede INSTALARLO y comprobar que queda bien: es la única
+# verificación del camino que recorre un alumno de Windows.
+#
+# La fuente de verdad de este fichero está en el repositorio de la app, en
+# build_assets/windows-installer.yml. Si lo editas aquí, cópialo allí.
+#
+# El guion nexus_setup.iss lo genera build_release.sh y lo sube
+# publish_release.sh como fichero de la release.
+
+name: Windows installer
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Etiqueta de la release (ej. v1.1.2). Vacío = la última."
+        required: false
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  installer:
+    runs-on: windows-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Averiguar la release
+        id: rel
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "${{ github.event.inputs.tag }}"
+          if (-not $tag) { $tag = "${{ github.event.release.tag_name }}" }
+          if (-not $tag) {
+            $tag = (gh release view --repo $env:GITHUB_REPOSITORY --json tagName --jq .tagName)
+          }
+          if (-not $tag) { throw "No se ha podido determinar la release." }
+          Write-Host "Release: $tag"
+          "tag=$tag" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+
+      - name: Descargar el paquete y el guion de Inno Setup
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          New-Item -ItemType Directory -Force -Path work | Out-Null
+          gh release download ${{ steps.rel.outputs.tag }} --repo $env:GITHUB_REPOSITORY `
+             --pattern "NexusSR-v*-win.zip" --dir work
+          gh release download ${{ steps.rel.outputs.tag }} --repo $env:GITHUB_REPOSITORY `
+             --pattern "nexus_setup.iss" --dir work
+          $zip = (Get-ChildItem work\NexusSR-v*-win.zip)[0].FullName
+          # El .iss referencia la carpeta por su nombre (NexusSR-vX.Y.Z\*), así
+          # que se extrae AL LADO del guion y no dentro de otra carpeta.
+          Expand-Archive -Path $zip -DestinationPath work -Force
+          Get-ChildItem work | Select-Object Name
+
+      - name: Instalar Inno Setup
+        shell: pwsh
+        run: |
+          $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+          if (Test-Path $iscc) {
+            Write-Host "Inno Setup ya viene en la imagen."
+          } else {
+            choco install innosetup -y --no-progress
+          }
+          if (-not (Test-Path $iscc)) { throw "No se encuentra ISCC.exe tras instalar." }
+
+      - name: Compilar el instalador
+        shell: pwsh
+        run: |
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "work\nexus_setup.iss"
+          if ($LASTEXITCODE -ne 0) { throw "La compilacion fallo (exit $LASTEXITCODE)" }
+          $exe = (Get-ChildItem work\NexusSR-Setup-v*.exe)[0]
+          Write-Host ("Instalador: {0} ({1:N1} MB)" -f $exe.Name, ($exe.Length / 1MB))
+          "EXE=$($exe.FullName)" | Out-File -FilePath $env:GITHUB_ENV -Append
+
+      # Esto es lo que ninguna otra comprobacion hace: recorrer la instalacion
+      # como un alumno. En silencio, porque aqui no hay nadie para pulsar botones.
+      - name: Instalarlo y comprobar que queda bien
+        shell: pwsh
+        run: |
+          $p = Start-Process -FilePath $env:EXE `
+                 -ArgumentList "/VERYSILENT","/SUPPRESSMSGBOXES","/NORESTART" `
+                 -Wait -PassThru
+          if ($p.ExitCode -ne 0) { throw "El instalador devolvio $($p.ExitCode)" }
+
+          $dir = Join-Path $env:LOCALAPPDATA "Programs\Nexus SR"
+          $faltan = @()
+          foreach ($f in @("Nexus SR.vbs","Start_NexusSR.bat","app.R","run_app.R","VERSION","nexus.ico","R","www")) {
+            if (-not (Test-Path (Join-Path $dir $f))) { $faltan += $f }
+          }
+          if ($faltan.Count -gt 0) { throw "Faltan tras instalar: $($faltan -join ', ')" }
+
+          $menu = Join-Path $env:APPDATA "Microsoft\Windows\Start Menu\Programs\Nexus SR\Nexus SR.lnk"
+          if (-not (Test-Path $menu)) { throw "No se ha creado el acceso directo del menu Inicio." }
+
+          $ver = (Get-Content (Join-Path $dir "VERSION")).Trim()
+          Write-Host "Instalado correctamente: Nexus SR $ver en $dir"
+          Write-Host "Acceso directo del menu Inicio: OK"
+
+      - name: Adjuntar el instalador a la release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Copia con nombre estable para que dl.nexussr.org/exe apunte siempre
+          # a la ultima, igual que /mac y /win.
+          Copy-Item $env:EXE "work\NexusSR-Setup.exe" -Force
+          gh release upload ${{ steps.rel.outputs.tag }} --repo $env:GITHUB_REPOSITORY `
+             "$env:EXE" "work\NexusSR-Setup.exe" --clobber
+          Write-Host "Subido a la release ${{ steps.rel.outputs.tag }}"
