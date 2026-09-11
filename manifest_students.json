@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.1.0",
+  "latest_version": "1.1.1",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "<ul><li>Downloads and update checks now come from nexussr.org instead of a third-party page.</li><li>Meta-analysis: corrected effect-size arithmetic, studies are no longer dropped in silence, and the engine now has a test suite.</li><li>Citations: references keep volume and page numbers, and Claim-to-Citation matches claims far more accurately.</li><li>Reader: reading queues, annotations and highlights that survive closing the PDF.</li><li>Agreement: a real 95% confidence interval for Cohen&#x27;s kappa, and studies nobody compared are no longer scored.</li><li>Risk of Bias: corrected ROBINS-I and JBI items, and the AI pre-fill can no longer invent an answer the tool does not offer.</li><li>Search String Creator and Polyglot: the query searches what you asked for, and nothing is dropped without telling you.</li><li>Reference set check: measure how much of a known set your search actually recovered, and why a paper is missing.</li><li>Library: duplicate pairing by title works again on .nbib, .csv and .xml imports.</li><li>AI: cheaper calls, a spending ceiling, and the same results parser for every route.</li></ul>",
+  "release_notes": "<ul><li>macOS: Nexus SR now opens as a normal application. The previous build could not start on a Mac after being downloaded.</li><li>A window now shows what the app is doing while it starts, including the first-run installation of the R packages.</li><li>macOS updates now install themselves when you open the new app.</li></ul>",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "2127c042a226724e850148c313a9fabd4c9eb15401226828a5669fc3cead0fff",
-  "sha256_win": "b92e110c6c9e779218c33c5910ab8103d055277eb3cd34b59e0aae35fcfefbe0"
+  "sha256_mac": "baed4b3ba1a2cd613c750c355351ff095253be86c8c1ca368ce6c8268714b69b",
+  "sha256_win": "eccb189c3d2a923cfc1df0aa11162981c629240902d227f95a6934e4ec2a20fd"
 }
