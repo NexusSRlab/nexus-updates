@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.1.1",
+  "latest_version": "1.1.2",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
   "release_notes": "<ul><li>macOS: Nexus SR now opens as a normal application. The previous build could not start on a Mac after being downloaded.</li><li>A window now shows what the app is doing while it starts, including the first-run installation of the R packages.</li><li>macOS updates now install themselves when you open the new app.</li></ul>",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "baed4b3ba1a2cd613c750c355351ff095253be86c8c1ca368ce6c8268714b69b",
-  "sha256_win": "eccb189c3d2a923cfc1df0aa11162981c629240902d227f95a6934e4ec2a20fd"
+  "sha256_mac": "a9ea1c1937b3b15f43d9029413fe6c6b26241f1cd3f9f579b41bd803fe0bbf11",
+  "sha256_win": "ae60a7224e1a7c5009a3b719d58fac8e1882c3092e29ef9c83fb3273e3d0994e"
 }
