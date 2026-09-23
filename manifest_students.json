@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.1.4",
+  "latest_version": "1.1.5",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "<ul><li>Windows: the Nexus SR shortcut could do nothing at all on some computers. The launcher has been fixed, and the first-time package installation now runs in its own window so you can follow its progress (10-25 minutes, only once).</li><li>Fixed a first-run problem: if some R packages failed to download (slow or unstable connection), the installer said everything was fine and Nexus SR then refused to start. It now waits longer for each download, retries whatever is missing, and checks every package the app needs before finishing.</li><li>If Nexus SR did not start for you after installing, simply download and install this version and open it again: it will repair the missing packages on its own.</li></ul>",
+  "release_notes": "<ul><li>Windows: Nexus SR now finds R in many more places. If it still cannot find it, it asks whether R is installed and lets you point to it (Rscript.exe, inside the R folder, in &quot;bin&quot;), and remembers your choice.</li><li>The first-time package installation no longer fails because of optional packages that are not available for your version of R.</li></ul>",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "7f7762211fd9ac98aff70bb0e16a7709e9ebb51cf513de7297a51e83870ce811",
-  "sha256_win": "807e14cbbe89370c9dced9bfb5633630bd5274730b43b8388564022f8a6f6b0e"
+  "sha256_mac": "e7fd353901f8a40194307a7f08670ddfb132659bc6aace222284dfcc6abaad7c",
+  "sha256_win": "e0c82dd9bddc1e3c73f0490258f9c644dd81efd40dd79c5d5f2b8adb63244db6"
 }
