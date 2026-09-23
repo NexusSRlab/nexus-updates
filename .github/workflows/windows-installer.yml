@@ -106,6 +106,31 @@ jobs:
           Write-Host "Instalado correctamente: Nexus SR $ver en $dir"
           Write-Host "Acceso directo del menu Inicio: OK"
 
+      # El alumno NO tiene pwsh: tiene Windows PowerShell 5.1, que lee un .ps1
+      # sin BOM como ANSI (Windows-1252). La 1.1.3 llevaba un guion largo en una
+      # cadena que ahi se convierte en comilla tipografica: el lanzador no
+      # llegaba ni a parsear, y el acceso directo "no hacia nada". pwsh lee
+      # UTF-8 y no lo ve. Por eso este paso usa shell: powershell (5.1) y lee el
+      # fichero con la codificacion ANSI, como lo lee el motor.
+      - name: El lanzador parsea en Windows PowerShell 5.1
+        shell: powershell
+        run: |
+          Write-Host "PowerShell $($PSVersionTable.PSVersion)"
+          $dir = Join-Path $env:LOCALAPPDATA "Programs\Nexus SR"
+          $ps1 = Join-Path $dir "Start_NexusSR_win.ps1"
+          if (-not (Test-Path $ps1)) { throw "Falta Start_NexusSR_win.ps1 tras instalar." }
+          $bytes = [System.IO.File]::ReadAllBytes($ps1)
+          $noAscii = @($bytes | Where-Object { $_ -gt 127 }).Count
+          if ($noAscii -gt 0) { throw "Start_NexusSR_win.ps1 tiene $noAscii bytes no ASCII." }
+          $text = [System.IO.File]::ReadAllText($ps1, [System.Text.Encoding]::Default)
+          $tokens = $null; $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseInput($text, [ref]$tokens, [ref]$errors) | Out-Null
+          if ($errors.Count -gt 0) {
+            $errors | ForEach-Object { Write-Host "Linea $($_.Extent.StartLineNumber): $($_.Message)" }
+            throw "El lanzador no parsea en Windows PowerShell 5.1."
+          }
+          Write-Host "Lanzador OK en Windows PowerShell 5.1"
+
       - name: Adjuntar el instalador a la release
         shell: pwsh
         env:
