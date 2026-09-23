@@ -132,6 +132,31 @@ jobs:
           if ($noAscii -gt 0) { throw "Start_NexusSR_win.ps1 tiene $noAscii bytes no ASCII." }
           Write-Host "Lanzador OK en Windows PowerShell 5.1"
 
+      # 1.1.4: un alumno con R instalado recibia "Rscript not found". Aqui se
+      # ejecutan las funciones de busqueda del lanzador de verdad (sacadas del
+      # propio .ps1 instalado, sin arrancar la app) en Windows PowerShell 5.1.
+      - name: El lanzador encuentra R
+        shell: powershell
+        run: |
+          $ps1 = Join-Path $env:LOCALAPPDATA "Programs\Nexus SR\Start_NexusSR_win.ps1"
+          $ast = [System.Management.Automation.Language.Parser]::ParseFile($ps1, [ref]$null, [ref]$null)
+          $funcs = $ast.FindAll({ param($n) $n -is [System.Management.Automation.Language.FunctionDefinitionAst] }, $true)
+          foreach ($f in $funcs) { . ([scriptblock]::Create($f.Extent.Text)) }
+          $RPATH_FILE = Join-Path $env:RUNNER_TEMP "rscript_path.txt"
+          $script:R_SEARCHED = @()
+
+          $found = Get-RscriptPath
+          Write-Host "R del runner: $found"
+          if (-not $found) { throw "No encuentra el R instalado. Buscado en: $($script:R_SEARCHED -join ' | ')" }
+
+          # La ruta elegida a mano manda sobre todo lo demas.
+          $fake = Join-Path $env:RUNNER_TEMP "R-hand\bin\Rscript.exe"
+          New-Item -ItemType File -Force -Path $fake | Out-Null
+          Set-Content -Path $RPATH_FILE -Value $fake
+          $hand = Get-RscriptPath
+          if ($hand -ne $fake) { throw "No respeta la ruta elegida a mano: $hand" }
+          Write-Host "Ruta elegida a mano: OK"
+
       - name: Adjuntar el instalador a la release
         shell: pwsh
         env:
