@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.1.7",
+  "latest_version": "1.1.8",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- Dark mode, finished: the last leftovers of the old dark theme are gone, so every screen now uses the same colours as light mode, adapted for dark.\n- Notifications keep their colour in dark mode (blue for messages, amber for warnings, red for errors), and tooltips no longer show a white arrow.\n- Buttons, tags and badges keep their own colours in dark mode instead of all turning grey, and the progress bars in Project summary are visible again.\n- Links in dark mode are a readable blue.\n- Some coloured texts were hard to read even in light mode and now meet contrast: group suggestions in Screening, the verdict boxes in Meta-analysis (Egger, trim-and-fill, p-curve), the status circles in Manuscript Reviewer, the \"Delete\" button on project cards and a badge in Power.\n- Citation Chaser's empty results box, the PRISMA side panel and the sticky notes on Home now follow the dark theme.",
+  "release_notes": "- Nexus AI works for students without their own AI settings: before, every AI feature failed with \"model not allowed\". The Integrity Checker also runs through Nexus AI now.\n- Trial and course licences show their AI allowance as a total for the whole licence, not per month.\n- New: a red dot on \"Check for updates\" on Home when a new version is available.\n- Home, Project summary, Library and Screening have redesigned cards with coloured headers and icons.\n- On medium-size screens, Home no longer hides Quick actions, Calendar and Deadlines.\n- Many texts that were hard to read are now clear, especially in dark mode: meta-analysis verdicts and help, the kappa badge in Agreement, Manuscript Reviewer scores, checklist progress bars, the Paper Draft preview and the task list in Project summary.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "1df2d96b0ddefba14add2a965c3690df3d10861d4a074ee266eeb0fb065c62f9",
-  "sha256_win": "9489cba8dc9844805e8398f2e3eb53c683888fde0810916a50248fb5325d2da6"
+  "sha256_mac": "7842f8bf7471e081c02e5fb555208d42163fa59b04e15338bc8cd9f42d623bf6",
+  "sha256_win": "1163fd50ff604a2946ae61ec6e60e81932c16bc8b390c1cf5d530e7c3b86015d"
 }
