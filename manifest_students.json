@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.1.6",
+  "latest_version": "1.1.7",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "<ul><li>New look: a cleaner, more consistent design across the whole app, and every text now meets accessibility contrast (WCAG AA) in both light and dark mode.</li><li>Dark mode is readable everywhere: panels, tables, search translations, checklists, risk-of-bias tools, GRADE and chat no longer show light text on light boxes.</li><li>Coloured buttons, labels, links and table page numbers are easier to read, and keep their colour in dark mode.</li><li>Importing .ris files keeps accents and special characters intact.</li><li>Library can fill in missing DOI, authors, journal and year for your records.</li><li>Reader notes can be exported to Word from the Library too.</li><li>The update notice always includes a download button.</li><li>Backups: the automatic backup now runs once when Nexus SR starts, not every time you reload the page, and old backups no longer leave extra files behind.</li><li>The Boost Pack is now £19 (same 290 AI operations).</li></ul>",
+  "release_notes": "<ul><li>Dark mode, finished: the last leftovers of the old dark theme are gone, so every screen now uses the same colours as light mode, adapted for dark.</li><li>Notifications keep their colour in dark mode (blue for messages, amber for warnings, red for errors), and tooltips no longer show a white arrow.</li><li>Buttons, tags and badges keep their own colours in dark mode instead of all turning grey, and the progress bars in Project summary are visible again.</li><li>Links in dark mode are a readable blue.</li><li>Some coloured texts were hard to read even in light mode and now meet contrast: group suggestions in Screening, the verdict boxes in Meta-analysis (Egger, trim-and-fill, p-curve), the status circles in Manuscript Reviewer, the &quot;Delete&quot; button on project cards and a badge in Power.</li><li>Citation Chaser&#x27;s empty results box, the PRISMA side panel and the sticky notes on Home now follow the dark theme.</li></ul>",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "c3a22c6590dfef01dc3347e985ef4527404fc1643aff17363c728934002fbdf4",
-  "sha256_win": "267930cd98a57779c43626b2b2942d363b82aaa5c08c8170845d5be20fdcec29"
+  "sha256_mac": "1df2d96b0ddefba14add2a965c3690df3d10861d4a074ee266eeb0fb065c62f9",
+  "sha256_win": "9489cba8dc9844805e8398f2e3eb53c683888fde0810916a50248fb5325d2da6"
 }
