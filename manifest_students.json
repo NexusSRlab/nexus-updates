@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.2.0",
+  "latest_version": "1.2.1",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- New: **Submissions** (Write > Submissions) tracks the papers you send to journals: each submission, its timeline, files, how long you have been waiting, and deadlines on Home.\n- Submissions: write your response to reviewers point by point and export it to Word; paste the editor's decision letter and the AI fills in the decision, dates and reviewer comments for you.\n- Nexus AI: the Home counter now shows the operations you have really used (it could stay at 0).\n- Nexus AI: the plan window lists every AI action and what it costs, and course licences no longer show a monthly reset they do not have.\n- Paid plans: your AI operations now come as one yearly allowance, so a full review fits even if you do most of it in one month. AI Boost Packs are now applied as soon as you buy them.\n- AI error messages now tell you when the problem is on our side and not yours.\n- macOS: updating while Nexus is open now restarts it properly instead of showing \"An error has occurred!\".\n- Full-text finder: a paper it cannot find now fails in seconds instead of freezing the table.\n- Projects: the project cards load much faster.\n- Meta-analysis: forest plots show the right first author for PubMed-style names (no more \"S et al.\").",
+  "release_notes": "- Licences: if your licence is suspended or revoked, Nexus now tells you clearly. A revoked licence still lets you open, read and export all your work.\n- Security: tighter protection of the data the app exchanges with the Nexus servers.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "9a631cdbbdf889c9a31bb329b6bc06963e776f25f843e96f938de61b63a1a716",
-  "sha256_win": "1c8062aba482ff4891bfa9f4f2464eaea30e66de2b14291535a792ff91651ccc"
+  "sha256_mac": "77b5c1a06401b34cc406b8eebf6c0630f0b6fdbe7b8d919f2a66486efd913e78",
+  "sha256_win": "ccaf0fb87551178dd4f20d6fc00518f87e4f75fa836a15cb81521dc1155e01ac"
 }
