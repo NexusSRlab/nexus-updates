@@ -168,3 +168,15 @@ jobs:
           gh release upload ${{ steps.rel.outputs.tag }} --repo $env:GITHUB_REPOSITORY `
              "$env:EXE" "work\NexusSR-Setup.exe" --clobber
           Write-Host "Subido a la release ${{ steps.rel.outputs.tag }}"
+
+      # El guion de Inno Setup solo sirve para compilar: en la lista de ficheros
+      # de la release confundia al alumno. Se quita una vez compilado y subido el
+      # .exe. Para recompilar a mano (workflow_dispatch) hay que volver a subirlo
+      # desde _build/win/nexus_setup.iss de ese mismo build.
+      - name: Quitar el guion de Inno Setup de la release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete-asset ${{ steps.rel.outputs.tag }} nexus_setup.iss --repo $env:GITHUB_REPOSITORY --yes
+          Write-Host "nexus_setup.iss retirado de la release"
