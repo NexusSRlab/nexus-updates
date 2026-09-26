@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.2.1",
+  "latest_version": "1.2.2",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- Licences: if your licence is suspended or revoked, Nexus now tells you clearly. A revoked licence still lets you open, read and export all your work.\n- Security: tighter protection of the data the app exchanges with the Nexus servers.",
+  "release_notes": "- Updates: Nexus now updates itself with one click. Each update is signed, and if anything goes wrong it goes back to the previous version on its own.\n- Security: the app now checks your licence status through the Nexus server instead of reading shared tables directly.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "77b5c1a06401b34cc406b8eebf6c0630f0b6fdbe7b8d919f2a66486efd913e78",
-  "sha256_win": "ccaf0fb87551178dd4f20d6fc00518f87e4f75fa836a15cb81521dc1155e01ac"
+  "sha256_mac": "dd3162e466e9c487b260c2b4bae447d347fe4949a7e49125add118145560dc00",
+  "sha256_win": "8b7715f91aec30eef35363165ee4e137186cdfe91472a1f832d439e27dd6e344"
 }
