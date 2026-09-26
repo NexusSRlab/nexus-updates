@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.2.2",
+  "latest_version": "1.2.3",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- Updates: Nexus now updates itself with one click. Each update is signed, and if anything goes wrong it goes back to the previous version on its own.\n- Security: the app now checks your licence status through the Nexus server instead of reading shared tables directly.",
+  "release_notes": "- Licences: your licence is now protected with a stronger digital signature. Nexus converts it automatically the first time you open it with an internet connection; you do not need to do anything.\n- Trial: the 7-day trial is now started through the Nexus server, so it needs an internet connection.\n- Search String Creator: every term is now put in quotes, also in All fields searches.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "dd3162e466e9c487b260c2b4bae447d347fe4949a7e49125add118145560dc00",
-  "sha256_win": "8b7715f91aec30eef35363165ee4e137186cdfe91472a1f832d439e27dd6e344"
+  "sha256_mac": "1e9aa34ca0ebfed37c71905975b28041a63589169be1d8494676b57aa9819341",
+  "sha256_win": "71dad7ac95808f48f5a163f13dc299fa5ea73be535936b6bb3b225fff2028241"
 }
