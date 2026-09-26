@@ -51,6 +51,14 @@ jobs:
           Rscript --vanilla "$env:APP_DIR\install_core_packages.R"
           if ($LASTEXITCODE -ne 0) { throw "La instalacion de paquetes fallo (exit $LASTEXITCODE)" }
 
+      # Licencias v2 y actualizador dependen de openssl::ed25519_*; en Windows
+      # no hay otra prueba real de que el binario de openssl lo soporte.
+      - name: Ed25519 works on Windows (licences v2 + updater)
+        shell: pwsh
+        run: |
+          Rscript --vanilla -e "k <- openssl::ed25519_keygen(); m <- charToRaw('nexus'); s <- openssl::ed25519_sign(m, k); stopifnot(isTRUE(openssl::ed25519_verify(m, s, k[['pubkey']])), !isTRUE(tryCatch(openssl::ed25519_verify(charToRaw('otro'), s, k[['pubkey']]), error = function(e) FALSE))); cat('ed25519 ok\n')"
+          if ($LASTEXITCODE -ne 0) { throw "Ed25519 no funciona en Windows (exit $LASTEXITCODE)" }
+
       - name: Load the whole app on Windows (deterministic build check)
         shell: pwsh
         run: |
