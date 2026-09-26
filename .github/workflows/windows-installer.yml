@@ -165,8 +165,15 @@ jobs:
           # Copia con nombre estable para que dl.nexussr.org/exe apunte siempre
           # a la ultima, igual que /mac y /win.
           Copy-Item $env:EXE "work\NexusSR-Setup.exe" -Force
+          # Etiquetas: GitHub las muestra en vez del nombre (ver asset_label en
+          # publish_release.sh). Flecha, punto y tilde con [char] para no depender
+          # de la codificacion con que el runner lea el guion.
+          $arrow = "$([char]0x2B07)$([char]0xFE0F)"
+          $dot = [char]0x00B7
+          $lblMain = "$arrow Windows $dot instalador, descarga este / installer, download this (.exe)"
+          $lblVer = "Copia con versi$([char]0x00F3)n / versioned copy: $((Get-Item $env:EXE).Name)"
           gh release upload ${{ steps.rel.outputs.tag }} --repo $env:GITHUB_REPOSITORY `
-             "$env:EXE" "work\NexusSR-Setup.exe" --clobber
+             "$($env:EXE)#$lblVer" "work\NexusSR-Setup.exe#$lblMain" --clobber
           Write-Host "Subido a la release ${{ steps.rel.outputs.tag }}"
 
       # El guion de Inno Setup solo sirve para compilar: en la lista de ficheros
