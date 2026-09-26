@@ -1,5 +1,5 @@
 # Windows smoke test para Nexus SR.
-# Este fichero se DESPLIEGA en el repo ikerugr/nexus-updates, en la ruta
+# Este fichero se DESPLIEGA en el repo NexusSRlab/nexus-updates, en la ruta
 #   .github/workflows/windows-smoke.yml
 # (este proyecto no tiene remoto, así que esta copia es solo la fuente de verdad
 #  para editarlo; el que se ejecuta vive en nexus-updates).
@@ -9,7 +9,7 @@
 # de un alumno, levanta la app y comprueba que sirve HTTP 200. Es la verificación
 # de Windows que no se puede hacer en un Mac.
 #
-# Cómo lanzarlo: en github.com/ikerugr/nexus-updates > pestaña Actions >
+# Cómo lanzarlo: en github.com/NexusSRlab/nexus-updates > pestaña Actions >
 # "Windows smoke test" > Run workflow. También se ejecuta solo al publicar
 # cada release.
 name: Windows smoke test
@@ -38,8 +38,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           New-Item -ItemType Directory -Force -Path bundle | Out-Null
-          gh release download --repo ${{ github.repository }} --pattern "NexusSR-*-win.zip" --dir bundle
-          $zip = (Get-ChildItem bundle\*.zip)[0].FullName
+          gh release download --repo ${{ github.repository }} --pattern "NexusSR-v*-win.zip" --dir bundle
+          $zip = (Get-ChildItem bundle\NexusSR-v*-win.zip)[0].FullName
           Expand-Archive -Path $zip -DestinationPath app -Force
           $appDir = (Get-ChildItem app -Directory)[0].FullName
           "APP_DIR=$appDir" | Out-File -FilePath $env:GITHUB_ENV -Append
