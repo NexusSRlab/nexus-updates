@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.3.2",
+  "latest_version": "1.4.0",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- Project summary: deleting or editing an eligibility criterion right after switching projects could remove or change a criterion of the previous project, and the list then looked empty. Now a delete or edit only touches the criteria you are looking at; if the list is out of date, nothing is changed and it refreshes.",
+  "release_notes": "- AI safety: text that comes from outside the app (imported records, PDFs, ethics committee forms, manuscripts, trial registries) is now always marked as data when it is sent to the AI, so instructions hidden inside a document can no longer steer the ethics form, the Manuscript Reviewer, the Research Assistant or the Integrity Checker.\n- Research Assistant: author names in citations are now shown as plain text; an imported record with HTML in its authors field could previously run code in the chat.\n- GRADE: assessing all domains at once now uses exactly the same decision rules as assessing them one by one (publication bias with trim-and-fill, imprecision with the sample-size and optimal-information-size thresholds, risk of bias weighted by study size), so the same domain no longer gets a different rating depending on the button you press.\n- AI credits: every AI feature is now charged at its own cost. The Integrity Checker and title/abstract screening outside batch mode cost a little more; Chat with PDF and full-text screening cost less. The credits table in the AI settings shows the current cost of each feature.\n- AI credits: your remaining AI credits are now read from the server when the app starts, so bonuses and AI added to your licence show up straight away instead of after your first AI call.\n- Library: the Metadata button now also fetches missing abstracts (useful for Web of Science exports, which arrive without them). It never replaces an abstract you already have.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "fd4e870e6f4ef78ac6496f59705ad395e2566e11235a886005d01aa15001530f",
-  "sha256_win": "b14196cfa58ff3f6a78426da9247edfed0758c82365db27f8a01502843a9b6fc"
+  "sha256_mac": "cb6fe39fcd1662e866ad3a0aa243b9b3097b46dfe7d693b01036e6de6b7654b5",
+  "sha256_win": "7f6b9e3ab8fcd865bf794e486fa7f4b700ed4e0c91fea7cfd0a78f345eceea47"
 }
