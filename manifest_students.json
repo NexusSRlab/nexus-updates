@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.3.0",
+  "latest_version": "1.3.1",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- OSF: uploads now run in the background. You can keep working while your files go up, and a notice shows the progress.\n- OSF: creating a new OSF project also runs in the background, and all its folders are now created reliably.\n- OSF: new exports: a pre-registration protocol draft (Word), the PRISMA diagram, the included studies (RIS), your extracted data and your meta-analysis results.\n- OSF: files that have not changed since your last upload are skipped instead of being uploaded again.\n- OSF: fixed pre-registration uploads, file names (files arrived as \"0.pdf\") and the search for contributors.\n- OSF: your OSF token is now stored encrypted, and you can replace it with \"Change token\" without disconnecting.\n- OSF: paste your registration link in the OSF tab and Paper Draft and the project timeline will use it.\n- Meta-analysis and Library: after an error, they no longer continue and show a second, misleading message.\n- Polyglot Search: the options are now evenly spaced.",
+  "release_notes": "- Scanned PDFs: when a PDF is a scanned image with no text, Nexus now reads it with OCR, so AI features, the Reader and imports see its content instead of an empty page.\n- Project summary: the PICO/SPIDER boxes and the secondary objectives now grow as you type, so long answers are no longer cut off.\n- Project summary: new \"Rewrite with AI\" button. It rewrites your main objective so it is correctly defined, without adding anything you did not write. You can undo it.\n- Citation Chaser: the search now runs in the background. You can close the progress window and keep working, or stop the search.\n- Citation Chaser: the network graph no longer freezes the app after a large search.\n- Library: \"Send to Citation Chaser\" now sends every selected paper, not only the first one.\n- Updates: the update and reconnect notices now show a clear icon for each case instead of always a warning sign.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "3251771c8ef2aa63650f86ed1bffb692b2af424e9d305d9cb217f8386781f2fd",
-  "sha256_win": "6a3e46b6a89bc5cc90c1a27ca3a0c31c279785610ae853f9a2c73a8ae1e3aed0"
+  "sha256_mac": "8e4f82d447fc21310860f6b140183b0ee5c6637e8f11c83d82b4bed95642c3d3",
+  "sha256_win": "08ac052d373aab4ae7cd719f5e981494fcf448825f4463a3cde1283e26ad8bd9"
 }
