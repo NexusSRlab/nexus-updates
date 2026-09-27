@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.3.1",
+  "latest_version": "1.3.2",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- Scanned PDFs: when a PDF is a scanned image with no text, Nexus now reads it with OCR, so AI features, the Reader and imports see its content instead of an empty page.\n- Project summary: the PICO/SPIDER boxes and the secondary objectives now grow as you type, so long answers are no longer cut off.\n- Project summary: new \"Rewrite with AI\" button. It rewrites your main objective so it is correctly defined, without adding anything you did not write. You can undo it.\n- Citation Chaser: the search now runs in the background. You can close the progress window and keep working, or stop the search.\n- Citation Chaser: the network graph no longer freezes the app after a large search.\n- Library: \"Send to Citation Chaser\" now sends every selected paper, not only the first one.\n- Updates: the update and reconnect notices now show a clear icon for each case instead of always a warning sign.",
+  "release_notes": "- Project summary: deleting or editing an eligibility criterion right after switching projects could remove or change a criterion of the previous project, and the list then looked empty. Now a delete or edit only touches the criteria you are looking at; if the list is out of date, nothing is changed and it refreshes.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "8e4f82d447fc21310860f6b140183b0ee5c6637e8f11c83d82b4bed95642c3d3",
-  "sha256_win": "08ac052d373aab4ae7cd719f5e981494fcf448825f4463a3cde1283e26ad8bd9"
+  "sha256_mac": "fd4e870e6f4ef78ac6496f59705ad395e2566e11235a886005d01aa15001530f",
+  "sha256_win": "b14196cfa58ff3f6a78426da9247edfed0758c82365db27f8a01502843a9b6fc"
 }
