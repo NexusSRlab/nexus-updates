@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.4.1",
+  "latest_version": "1.5.0",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- AI: with Nexus-managed AI, the instructions for each AI feature are now assembled on the Nexus server instead of being sent from the app. Improvements to those instructions can reach you without waiting for a new version.\n- macOS: the app downloaded from the website is now signed, so macOS remembers your answer when it asks to access your Desktop, Documents or Downloads folder instead of asking again every few seconds. If you update from inside the app, download the app once more from the website to get this fix.",
+  "release_notes": "- AI screening: you can now choose between Fast (results in about a minute) and Economy (half the AI ops, results in 2-10 minutes). The time estimate now matches the option you pick, and the progress message no longer looks stuck at 0 while Anthropic is still working.\n- Library: the RIS export now includes abstracts, keywords, volume, issue and pages, so abstracts you filled in with \"Metadata\" are no longer lost. The RIS exports from Screening and from the OSF Quick Export include them too.\n- Citation mark helper: you can now search your whole library, not just the first 500 records, and it gives the same citation mark as the Library.\n- Generate references: APA and Vancouver references are formatted correctly and no longer come out duplicated.\n- Resolve Word citations: Harvard references are now in alphabetical order with full author lists. Same-author, same-year works get 2024a/2024b, and APA adds the surnames needed to tell \"et al.\" citations apart.\n- Resolve Word citations: marks with partial formatting (for example a DOI in bold) are now replaced in the downloaded document and in the preview. Without Pandoc, the document keeps its italics and the reference list comes out in order at the end.\n- Resolve Word citations: the Library cross-check now counts the records you cited from the active library, and reports citations from other libraries separately.\n- Claim-to-Citation: sentences that already have a citation mark are recognised as cited, and adding a citation no longer lowers the suggestions for that sentence.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "d453bed8a1e2f902a9cd54a5b9920070dee74aa8fec77e1ae25dc6d4f3aae8b2",
-  "sha256_win": "172fb854502f8cf85c94dd70447fadd7d19e5ab104c3fef140c6e2bf58a9e99c"
+  "sha256_mac": "d10f5e82e5f09fe8fd9e05d4493935aa95c08d8398a7edccaca5452d1c38e26b",
+  "sha256_win": "8d6c3e6b971e354b517c699114bfc7279481db302dd2390cd641bcf770c79795"
 }
