@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.7.0",
+  "latest_version": "1.7.1",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- New Inbox tab: send papers from your phone to Nexus. Saw a paper on X, LinkedIn or WhatsApp? Share it with Nexus from your phone and it waits in the Inbox until you open Nexus on your computer, already identified with its title, authors, journal and abstract.\n- Connect your phone once with the QR code in Inbox → Connect phone. On iPhone, install the \"Nexus Inbox\" shortcut from the page that opens and it appears in the Share menu; on Android, install that page as an app. Any phone can also paste a link or a DOI on that page.\n- PDFs too: share a PDF from Files, WhatsApp or Mail and Nexus reads its DOI, fills in the details and, when you import it, attaches the PDF to the record — also to a paper that was already in your project.\n- Import what arrives into any project with one click. A paper that is already in the project is not duplicated.\n- Privacy: only the link, your note and the PDF you send go through the Nexus server, and they are deleted as soon as your computer collects them (links after 30 days and PDFs after 7 at the latest).",
+  "release_notes": "- Inbox: choose the library as well as the project when you import what you sent from your phone. Nexus remembers your last choice.\n- When a paper is already in the project, Nexus now tells you where it is (project › library) instead of just \"already in the project\". Tick \"Also add it to this library\" to put it in the library you chose anyway.\n- Papers you already imported can be imported again into another library or project from the Imported view; a PDF that came with them is attached there too.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "d7d81415b6df84362ac9da856b3ed8bbc18bb00f6f14600c4ea557c2879dbe7a",
-  "sha256_win": "7b2132513e849a189901051ee730ab9cef076eab48c8fa101330bb088843c717"
+  "sha256_mac": "aa79a48609843a381e8256eaea68aa9bbdfe44f519ba6f089e819cb68ada5aa5",
+  "sha256_win": "4b3a3baab0bb8aa67875fe94d8de6140939c904c395903fbf74e944abe8ccc7d"
 }
