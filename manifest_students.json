@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.6.1",
+  "latest_version": "1.6.2",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- Risk of Bias (RoB 2): the AI pre-fill now only answers the signalling questions. Domain and overall judgements are worked out from those answers with the official RoB 2 algorithm, so they always match the answers you see. If you disagree, change them in the tool: your own domain judgement is kept, and Manual override protects the overall.\n- Risk of Bias (RoB 2): each assessment is about one specific result. Pick an outcome (and, if you want, the measure, time point and analysis) before running the AI. Without one, the AI tells you which result it assessed. Studies that do not report the chosen result are left empty instead of being filled in with guesses.\n- Risk of Bias (RoB 2), Domain 5: the trial registry comparison is now used as evidence (registration date, later changes to the record, registered outcomes and their time frames) and no longer as a ready-made judgement. The comparison panel in Full-text screening lists the discrepancies found instead of a \"RoB D5\" verdict.\n- Risk of Bias: an outcome you add with \"+\" now appears in the outcome selector straight away.\n- AI batches: when a Risk of Bias batch finishes with errors, or its results cannot be downloaded, the AI ops for those studies are now refunded. Before, they were lost and the screen could disconnect. If you close Nexus before a batch finishes, its ops are refunded automatically after 24 hours.\n- AI Economy mode now charges the discounted ops it shows.",
+  "release_notes": "- Faster Library: right after starting Nexus, or after switching project, opening a library no longer makes you wait several seconds. The cause was the citation-mark search in Citations, which prepared every record of every project in the background; it now loads only when you open Citations, and only for the active library.\n- Nexus uses less CPU while you are not doing anything (about half as much): the tabs that refresh on their own now pause while they are hidden and catch up as soon as you open them. Clicks are less likely to wait behind background work.\n- Watch folders: new PDFs in a watch folder are now attached to their record automatically when the DOI or title match is clear, as the setting intends. Before, most of them stayed in the inbox waiting for you, and each folder was scanned twice.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "36c77d7046c456d1c72a61f03630e81557ffe4ba9888dfb8b35e9b795a1a5bab",
-  "sha256_win": "d58222b2d057f5e0016df0b032ba4533e100e92c46aa3292a8b483c52fdf3c6f"
+  "sha256_mac": "45be84af0cc2afaaf8892298013b6eb7608b085001c4e566ff70d3f5548d9fd0",
+  "sha256_win": "eb5ba10f4dc5f986ad264eea81d44fc102a48ad4eda824470a9b142e46653130"
 }
