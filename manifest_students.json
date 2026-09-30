@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.7.1",
+  "latest_version": "1.8.0",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- Inbox: choose the library as well as the project when you import what you sent from your phone. Nexus remembers your last choice.\n- When a paper is already in the project, Nexus now tells you where it is (project › library) instead of just \"already in the project\". Tick \"Also add it to this library\" to put it in the library you chose anyway.\n- Papers you already imported can be imported again into another library or project from the Imported view; a PDF that came with them is attached there too.",
+  "release_notes": "- Your license now activates on its own: after you request it in the licence portal, go back to Nexus SR and within about 30 seconds the app reloads with the license active. No file to download or load (the file is still there if you need it).\n- New step-by-step OSF guide: press \"Guide\" on the OSF Connection card to learn what OSF is for in a review, how to connect it in five minutes, and how to pre-register. It shows which steps you have already done.\n- Mixed-methods reviews now get the same OSF folder structure as systematic reviews.\n- Home: the bottom card now shows the latest papers you sent from your phone (Inbox), or the tips if you prefer. Click a paper to open the Inbox.\n- Coloured outline buttons (for example \"Export Word\" in the Reader notes) show their colour again instead of appearing plain white.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "aa79a48609843a381e8256eaea68aa9bbdfe44f519ba6f089e819cb68ada5aa5",
-  "sha256_win": "4b3a3baab0bb8aa67875fe94d8de6140939c904c395903fbf74e944abe8ccc7d"
+  "sha256_mac": "bf98d9d76a76566d85508a82040f72c416babc59bd2e51fefaf97507f74eb39f",
+  "sha256_win": "95092c9b32b1473927835f694ba0801fead35289524f9d6f5a257cac1366935e"
 }
