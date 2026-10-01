@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.9.1",
+  "latest_version": "1.9.2",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- \"Save to project folder\" is now next to every download that belongs to a project: PRISMA, risk of bias, data extraction, meta-analysis, GRADE, PICO, screening, Library, Reader, search strings, writing tools, qualitative tools, trial tools and the AI tools. Files go to a \"Nexus SR exports\" folder inside your project folder, sorted by section, and Nexus SR never imports them back as a new library or as PDFs to attach. The button appears once you have chosen a project folder in Projects.\n- AI Screening: results saved from an earlier batch now show up even when the library has no groups yet, and the library list in \"Load studies\" is no longer cut off.\n- With Nexus AI you can now cancel a running AI batch, and the ops are given back.\n- Chat with PDF: long conversations no longer get more expensive with every question.\n- Starting Nexus SR no longer closes another program that uses the same port, and on Mac reopening it with Safari open no longer closes Safari.\n- Windows: restoring a backup from the backup manager works again.\n- Search String Creator warns you about terms repeated in two blocks and about MeSH headings written back to front, such as \"Neoplasms, Breast\".\n- Help now explains the full-text AI batch and the mobile Inbox, and read-only mode tells you why an action did nothing in a few places where it stayed silent.\n- Smaller fixes in Citations, the Reader annotations and risk of bias, which now uses less of your computer when you are on another tab.",
+  "release_notes": "- First installation on a Mac is more reliable: Nexus SR now checks that every R package it needs actually loads before it says the installation is done, and reinstalls the ones that do not. If your Mac is too old for the R version you installed, it tells you so before downloading anything, with what to do about it.\n- The first installation downloads far fewer packages (about 180 instead of 700), so it is faster.\n- If the installation fails, the reason is shown in a dialog instead of only in the log file.\n- On the next start, Nexus SR runs this check once on computers that already have it installed, which takes about a minute. Nothing else changes.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "adcb29d6797892d5c1b4a46a1ad3b4738e3ae3c87f9e6ce9ebb0ce02fbf828bf",
-  "sha256_win": "e0d6c3f8abc18a71a87db53de1d0aac566056678163ee8f7cbaf9df2c50ac977"
+  "sha256_mac": "b7b51c8c20201abe67b4f9059e88fac297a1dd596c4657998e1a6b81fbf5f380",
+  "sha256_win": "fc274f958bba75134a26aea095ac307750c1533d431fa95e6c5d0705a9be9ba4"
 }
