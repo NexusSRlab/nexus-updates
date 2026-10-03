@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.9.2",
+  "latest_version": "1.9.3",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- First installation on a Mac is more reliable: Nexus SR now checks that every R package it needs actually loads before it says the installation is done, and reinstalls the ones that do not. If your Mac is too old for the R version you installed, it tells you so before downloading anything, with what to do about it.\n- The first installation downloads far fewer packages (about 180 instead of 700), so it is faster.\n- If the installation fails, the reason is shown in a dialog instead of only in the log file.\n- On the next start, Nexus SR runs this check once on computers that already have it installed, which takes about a minute. Nothing else changes.",
+  "release_notes": "- The \"Find Full Text\" queue now downloads PDFs in the background: Nexus SR stays responsive while it works, and pausing it stops the downloads straight away.\n- The queue now also uses the PDF sources (Base URLs) you added in FFT Advanced.\n- AI full-text screening reads the parts of each article that matter: the methods are always kept and the reference list is left out, with the same decisions as before.\n- The AI cost shown before running PRISMA, CONSORT, CASP/JBI and Power is now lower, matching what is actually charged.\n- Power analysis with AI no longer receives an empty article when the PDF is very long.\n- Save buttons in Benchmark and Citation Chaser stay greyed out until there is something to save. In Chat with PDF, the button now says \"Save as Word (.docx)\".\n- On Windows, if Nexus SR cannot start or install, the log now records the step that failed and the antivirus on the computer, so we can help you faster.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "b7b51c8c20201abe67b4f9059e88fac297a1dd596c4657998e1a6b81fbf5f380",
-  "sha256_win": "fc274f958bba75134a26aea095ac307750c1533d431fa95e6c5d0705a9be9ba4"
+  "sha256_mac": "b8a7744fc6dcd7b4bacd4fbb9afd24b4fc1ec8ea22af6514a7c6a7b0081fc8e0",
+  "sha256_win": "7dfe37bc9f84c6d82f9a0fcdfa395745116e30896e24b14564f807e79dc02e09"
 }
