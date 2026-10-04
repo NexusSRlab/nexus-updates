@@ -149,13 +149,17 @@ jobs:
           Write-Host "R del runner: $found"
           if (-not $found) { throw "No encuentra el R instalado. Buscado en: $($script:R_SEARCHED -join ' | ')" }
 
-          # La ruta elegida a mano manda sobre todo lo demas.
+          # La ruta elegida a mano es el PRIMER candidato: gana los empates y es
+          # la que se usa si no hay otra. Desde la 1.9.4 ya no tapa una R mas
+          # nueva instalada despues (gana la version mas alta; ver
+          # Get-RscriptPath y test-windows-launcher.R), asi que aqui no se le
+          # puede exigir que gane a la R real del runner: este Rscript es falso.
           $fake = Join-Path $env:RUNNER_TEMP "R-hand\bin\Rscript.exe"
           New-Item -ItemType File -Force -Path $fake | Out-Null
           Set-Content -Path $RPATH_FILE -Value $fake
-          $hand = Get-RscriptPath
-          if ($hand -ne $fake) { throw "No respeta la ruta elegida a mano: $hand" }
-          Write-Host "Ruta elegida a mano: OK"
+          $cands = @(Get-RscriptCandidates)
+          if ($cands.Count -eq 0 -or $cands[0] -ne $fake) { throw "No tiene en cuenta la ruta elegida a mano: $($cands -join ' | ')" }
+          Write-Host "Ruta elegida a mano: primer candidato, OK"
 
       - name: Adjuntar el instalador a la release
         shell: pwsh
