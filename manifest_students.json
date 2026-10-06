@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.9.5",
+  "latest_version": "1.9.6",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- Deduplicator now also finds duplicates inside the same database (SPORTDiscus, for example, often returns the same article twice), and you can analyse a single library on its own.\n- Deduplicator no longer skips part of the matching in large libraries: with more than a few hundred records, many near-identical titles (a typo, a plural, 2019 vs 2020) used to go unnoticed.\n- Deduplicator no longer merges different papers that share the start of their title, such as two articles with different subtitles or different DOIs.\n- Deduplicator: the \"Exact groups\" card now counts every group matched by DOI or PMID, and each new analysis shows only its own groups.\n- PRISMA: \"Records excluded\" now counts the records you actually excluded at title/abstract screening, not every record still waiting for a decision. \"Load from DB\" tells you how many records are still undecided.\n- PRISMA now shows the numbers of the project you are working on as soon as you switch projects.\n- Records imported from SPORTDiscus or CINAHL no longer get EBSCO's record number as a PubMed ID, which made \"Metadata\" fill in details from an unrelated article. Records already imported are fixed automatically.\n- Smart Classificator explains each design in a new \"Why\" column, and recognises more designs by asking whether the investigators assigned the intervention, at random or not, and when they measured.\n- New \"Ask AI about N doubtful records\" button in Smart Classificator: the AI reads the title and abstract of the records the rules are unsure about and quotes the sentence it relies on. Each record is only paid for once.\n- Smart Classificator clears its preview when you switch projects.",
+  "release_notes": "- FFT Queue now finds and attaches PDFs for articles that are also in another library of the same project. Before, it reported \"0 found\" even though the PDF had been downloaded.\n- FFT Advanced no longer takes the PDF away from the copy of the same article in another library: both copies now keep their own PDF.\n- Windows: if you install a different version of R, Nexus SR now installs its packages for that version instead of stopping with \"there is no package called 'shiny'\" every time it starts.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "4d01ce8b5c82d067bebf99d8edb73f2443e1688f66bbe6825a8f8810b42d4cd6",
-  "sha256_win": "e1da68ac4126d77824898dee030691b38a128c28afc7d628a3d4a83202470f0b"
+  "sha256_mac": "7aeb9cf161ce92892e32ca322603cab85e340a02f0702bf5194ac158e3b4696d",
+  "sha256_win": "d888b54c7a3fd9957279f5c8ed7f3531982974bacbf1fb631c530bd748da2cb6"
 }
