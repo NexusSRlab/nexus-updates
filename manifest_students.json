@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.9.6",
+  "latest_version": "1.9.7",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- FFT Queue now finds and attaches PDFs for articles that are also in another library of the same project. Before, it reported \"0 found\" even though the PDF had been downloaded.\n- FFT Advanced no longer takes the PDF away from the copy of the same article in another library: both copies now keep their own PDF.\n- Windows: if you install a different version of R, Nexus SR now installs its packages for that version instead of stopping with \"there is no package called 'shiny'\" every time it starts.",
+  "release_notes": "- Full-text Screening: when you exclude a record you can now choose the reason from a list (wrong population, intervention, comparator, outcomes, study design or publication type, duplicate data, ineligible language, other) and add the detail in the box below. If you save an exclusion without a reason, Nexus SR tells you.\n- PRISMA: \"Reports excluded\" is now broken down by the reasons you chose in Full-text Screening. Records excluded without a reason appear as \"Reason not recorded\".\n- Full-text Screening: the Records drop-down is no longer cut off, the exclusion-reason box can be resized, and it is pre-filled with the reason from the AI review when it recommends excluding. What you have written yourself is never overwritten.\n- Windows: if Smart App Control blocks one of R's files, Nexus SR now tells you which file it blocked and how to turn Smart App Control off, instead of asking you to reinstall.\n- Windows on ARM laptops (Snapdragon): Nexus SR now uses the x64 version of R even if the ARM version is also installed (the ARM one has no ready-made packages and stopped Nexus SR from starting), and closing Nexus SR no longer shows a \"stopped unexpectedly\" error.\n- Mac: if you update R (for example from 4.5 to 4.6), Nexus SR now reinstalls its packages for the new R the next time you open it, instead of failing to start with \"there is no package called 'shiny'\". The first start after the update takes 10-25 minutes.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "7aeb9cf161ce92892e32ca322603cab85e340a02f0702bf5194ac158e3b4696d",
-  "sha256_win": "d888b54c7a3fd9957279f5c8ed7f3531982974bacbf1fb631c530bd748da2cb6"
+  "sha256_mac": "02ef1a50906904fcf9906f3b878edc33d6baa30750a6e32a48078b5c97ad79af",
+  "sha256_win": "e0eb049986cf2625b8b56fc58ec8a2fea674cd040ccb1dd115509d3a3ebff957"
 }
