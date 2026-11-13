@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.9.8",
+  "latest_version": "1.9.9",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- Windows: the \"Update now\" button now really installs the new version. Until now Nexus SR closed and did not come back, and you stayed on your old version. If you are on 1.9.7 or earlier, this update itself may still need to be installed by hand: download NexusSR-Setup.exe and install it over your current Nexus SR (your projects and PDFs are not touched).\n- Mac and Windows: after you update R, the window that reinstalls Nexus SR's packages now says why it is doing it (a new version of R), instead of calling it a \"first run\".",
+  "release_notes": "- Library: opening a library is faster, above all on Windows laptops. Each click used to load the table three times; now it loads once.\n- Library: clicking several libraries in a row now opens exactly the one you clicked last. On slower computers Nexus SR could open the wrong library, repeat earlier clicks, or keep jumping between two libraries by itself.\n- Library: clicking the library that is already open no longer unmarks it.\n- Windows: saving your work (screening decisions, ratings, imports...) no longer waits for the disk to confirm every single change, which made it much slower than on Mac.",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "a824a8dccdfd2d45202a2e9ffe8b851764d0809a64a8644eab9b235d85c9a179",
-  "sha256_win": "7ce492c292eab05772b5f82310f8e00aa78c4cb3b8ec7c5d25dbdded06f0ff11"
+  "sha256_mac": "e14f297a544dc72cc8bf99ce67de08ad4b2b48cc365c5021700dbc8423957fab",
+  "sha256_win": "a89b92365910bdce3f08738346703e80bf57f35b34bc4da898b6d086becc9eda"
 }
