@@ -1,10 +1,10 @@
 {
-  "latest_version": "1.9.7",
+  "latest_version": "1.9.8",
   "download_url": "https://dl.nexussr.org/",
   "release_url": "https://dl.nexussr.org/notas",
-  "release_notes": "- Full-text Screening: when you exclude a record you can now choose the reason from a list (wrong population, intervention, comparator, outcomes, study design or publication type, duplicate data, ineligible language, other) and add the detail in the box below. If you save an exclusion without a reason, Nexus SR tells you.\n- PRISMA: \"Reports excluded\" is now broken down by the reasons you chose in Full-text Screening. Records excluded without a reason appear as \"Reason not recorded\".\n- Full-text Screening: the Records drop-down is no longer cut off, the exclusion-reason box can be resized, and it is pre-filled with the reason from the AI review when it recommends excluding. What you have written yourself is never overwritten.\n- Windows: if Smart App Control blocks one of R's files, Nexus SR now tells you which file it blocked and how to turn Smart App Control off, instead of asking you to reinstall.\n- Windows on ARM laptops (Snapdragon): Nexus SR now uses the x64 version of R even if the ARM version is also installed (the ARM one has no ready-made packages and stopped Nexus SR from starting), and closing Nexus SR no longer shows a \"stopped unexpectedly\" error.\n- Mac: if you update R (for example from 4.5 to 4.6), Nexus SR now reinstalls its packages for the new R the next time you open it, instead of failing to start with \"there is no package called 'shiny'\". The first start after the update takes 10-25 minutes.",
+  "release_notes": "- Windows: the \"Update now\" button now really installs the new version. Until now Nexus SR closed and did not come back, and you stayed on your old version. If you are on 1.9.7 or earlier, this update itself may still need to be installed by hand: download NexusSR-Setup.exe and install it over your current Nexus SR (your projects and PDFs are not touched).\n- Mac and Windows: after you update R, the window that reinstalls Nexus SR's packages now says why it is doing it (a new version of R), instead of calling it a \"first run\".",
   "download_mac": "https://dl.nexussr.org/mac",
   "download_win": "https://dl.nexussr.org/win",
-  "sha256_mac": "02ef1a50906904fcf9906f3b878edc33d6baa30750a6e32a48078b5c97ad79af",
-  "sha256_win": "e0eb049986cf2625b8b56fc58ec8a2fea674cd040ccb1dd115509d3a3ebff957"
+  "sha256_mac": "a824a8dccdfd2d45202a2e9ffe8b851764d0809a64a8644eab9b235d85c9a179",
+  "sha256_win": "7ce492c292eab05772b5f82310f8e00aa78c4cb3b8ec7c5d25dbdded06f0ff11"
 }
